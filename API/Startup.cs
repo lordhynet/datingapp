@@ -34,9 +34,9 @@ namespace API
             {
                 options.UseSqlServer(_config.GetConnectionString("Default"));
             });
-        
 
-        services.AddControllers();
+            services.AddCors();
+            services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPIv5", Version = "v1" });
@@ -56,6 +56,10 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors(options =>
+            {
+                options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+            });
 
             app.UseAuthorization();
 
