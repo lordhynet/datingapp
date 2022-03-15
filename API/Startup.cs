@@ -1,4 +1,3 @@
-using API.Extensions;
 using API.NewFolder;
 using Microsoft.OpenApi.Models;
 
@@ -19,7 +18,7 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplicationServices(_config);
-            services.AddIdentity(_config);
+            //services.AddIdentity(_config);
 
 
             services.AddCors();
