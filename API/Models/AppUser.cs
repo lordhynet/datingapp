@@ -8,8 +8,8 @@ namespace API.Models
         [Required]
         public string UserName { get; set; }
         [Required]
-        public  byte [] PasswordHash { get; set; }
-        public  byte [] PasswordSalt { get; set; }
+        public byte[] PasswordHash { get; set; }
+        public byte[] PasswordSalt { get; set; }
 
     }
 }
